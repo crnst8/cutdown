@@ -1,0 +1,8 @@
+**
+!Dockerfile
+!pyproject.toml
+!uv.lock
+!cutdown/
+!cutdown/**
+cutdown/**/__pycache__/
+cutdown/**/*.pyc

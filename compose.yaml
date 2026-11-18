@@ -1,0 +1,15 @@
+services:
+  cutdown:
+    build: .
+    user: ${CUTDOWN_UID:-1000}:${CUTDOWN_GID:-1000}
+    init: true
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    tmpfs: [/tmp:mode=1777]
+    volumes:
+      - type: bind
+        source: ./work
+        target: /work
+        bind:
+          create_host_path: false

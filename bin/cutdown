@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Launcher for the cutdown CLI.
+#
+set -euo pipefail
+
+# Resolve through symlinks so a link on PATH still finds the project.
+src="${BASH_SOURCE[0]}"
+while [ -L "$src" ]; do
+    dir="$(cd -P "$(dirname "$src")" && pwd)"
+    src="$(readlink "$src")"
+    [[ $src != /* ]] && src="$dir/$src"
+done
+ROOT="$(cd -P "$(dirname "$src")/.." && pwd)"
+
+BIN="$ROOT/.venv/bin/cutdown"
+if [ ! -x "$BIN" ]; then
+    "$ROOT/install.sh" >&2
+fi
+exec "$BIN" "$@"
