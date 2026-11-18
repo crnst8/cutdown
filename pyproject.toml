@@ -1,6 +1,6 @@
 [project]
 name = "cutdown"
-version = "0.1.0"
+version = "1.0.0"
 description = "Transcript-to-clips edit harness for track-anchored interview segments"
 requires-python = ">=3.11"
 dependencies = [

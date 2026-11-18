@@ -4,4 +4,4 @@ Assignment and ordering of existing speech. Nothing is generated; every output
 sample comes from the master WAV.
 """
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"
